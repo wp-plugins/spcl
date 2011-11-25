@@ -1,21 +1,21 @@
-=== Cachify ===
+=== Save Post. Check Links. ===
 Contributors: sergej.mueller
 Tags: check, link, broken, seo
 Requires at least: 2.8
 Tested up to: 3.3
 Stable tag: trunk
 
-Links im Inhalt beim Artikelspeichern auf Erreichbarkeit prüfen
+Links im Artikel auf Erreichbarkeit prüfen. Prompt und automatisiert.
 
 
 
 == Description ==
 
-**Save Post. Check Links.** übernimmt die Prüfung der Verlinkungen innerhalb eines WordPress Artikels und hilft, Tipp- und Copy&Paste-Fehler in den gesetzten Links zu erkennen und noch vor der Veröffentlichung des Beitrages zu korrigieren.
+Das Plugin übernimmt die Prüfung der Verlinkungen innerhalb eines WordPress Artikels und hilft lästige Tipp- und Copy&Paste-Fehler in den gesetzten Links zu erkennen. Vorteil: Defekte Webseiten-Verknüpfungen können noch vor der Veröffentlichung des Beitrages korrigiert werden.
 
 Beim Speichern bzw. Publizieren sucht sich das performante Plugin alle Links im Post raus und pingt diese zwecks Richtigkeit an. Fehlerhafte und somit nicht erreichbare Links stellt das Plugin als übersichtliche, klickbare Liste dar. Zusätzlich zum jeweiligen Link führt das Tool den Grund der gescheiterten Verbindung auf. Im Erfolgsfall keine Hinweisausgabe.
 
-Auf der Google+ Seite des [Save Post. Check Links.](https://plus.google.com/110569673423509816572/posts/hDtKSyEozeR "Save Post. Check Links.") Plugins sind zahlreiche Tipps und Hinweise zur Nutzung der Erweiterung zu finden.
+Auf der Google+ Seite des Plugins [Save Post. Check Links.](https://plus.google.com/110569673423509816572/posts/hDtKSyEozeR "Save Post. Check Links.") sind zahlreiche Tipps und Hinweise zur Nutzung der Erweiterung zu finden.
 
 = Vorteile =
 * Performante Lösung, übersichtlicher Code
