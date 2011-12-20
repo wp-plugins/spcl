@@ -1,6 +1,7 @@
 === Save Post. Check Links. ===
 Contributors: sergej.mueller
-Tags: check, link, broken, seo
+Donate link: http://flattr.com/profile/sergej.mueller
+Tags: check, links, broken, seo
 Requires at least: 2.8
 Tested up to: 3.3
 Stable tag: trunk
@@ -25,14 +26,15 @@ Auf der Google+ Seite des Plugins [Save Post. Check Links.](https://plus.google.
 * Intakte Links = SEO
 
 = Weiterführende Links =
-* [Flattr](http://flattr.com/profile/sergej.mueller "Flattr")
 * [Google+](https://plus.google.com/110569673423509816572 "Google+")
 * [Portfolio](http://ebiene.de "Portfolio")
-* [Andere Plugins](http://wpcoder.de "Andere Plugins")
 
 
 
 == Changelog ==
+
+= 0.4.1 =
+* Hotfix für URLs mit Hash-Fragmenten
 
 = 0.4 =
 * Live auf wordpress.org

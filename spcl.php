@@ -5,7 +5,7 @@ Description: Bei der Speicherung eines Artikels prüft das Plugin die im Text vo
 Author: Sergej M&uuml;ller
 Author URI: http://wpseo.de
 Plugin URI: https://plus.google.com/110569673423509816572/posts/hDtKSyEozeR
-Version: 0.4
+Version: 0.4.1
 */
 
 
@@ -85,7 +85,7 @@ final class SPCL {
 	* Prüfung der Links
 	*
 	* @since   0.1
-	* @change  0.3
+	* @change  0.4.1
 	*
 	* @param   intval  $id  ID des Beitrags
 	*/
@@ -122,6 +122,11 @@ final class SPCL {
 		
 		/* Loopen */
 		foreach ( $out[1] as $url ) {
+			/* Fragment */
+			if ( $hash = parse_url($url, PHP_URL_FRAGMENT) ) {
+				$url = str_replace('#' .$hash, '', $url);
+			}
+			
 			/* Säubern */
 			$url = esc_url($url);
 			
