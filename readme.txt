@@ -1,37 +1,43 @@
 === Save Post. Check Links. ===
 Contributors: sergej.mueller
-Donate link: http://flattr.com/profile/sergej.mueller
 Tags: check, links, broken, seo
+Donate link: http://flattr.com/profile/sergej.mueller
 Requires at least: 2.8
 Tested up to: 3.3
 Stable tag: trunk
 
-Links im Artikel auf Erreichbarkeit prüfen. Prompt und automatisiert.
+
+
+Prüfung der Links auf ihre Richtigkeit bzw. Erreichbarkeit. Automatisiert und autonom beim Speichern der Beiträge.
 
 
 
 == Description ==
 
-Das Plugin übernimmt die Prüfung der Verlinkungen innerhalb eines WordPress Artikels und hilft lästige Tipp- und Copy&Paste-Fehler in den gesetzten Links zu erkennen. Vorteil: Defekte Webseiten-Verknüpfungen können noch vor der Veröffentlichung des Beitrages korrigiert werden.
+*Save Post. Check Links.* übernimmt die Prüfung der - internen wie externen - Verlinkungen innerhalb eines WordPress-Artikels. Somit hilft das Plugin die lästigen Tipp- sowie Copy&Paste-Fehler in den gesetzten Links zu erkennen. Der Vorteil: Defekte Webseiten-Verknüpfungen werden noch vor der Veröffentlichung des Beitrages erkannt und vom Autor rechtzeitig korrigiert.
 
-Beim Speichern bzw. Publizieren sucht sich das performante Plugin alle Links im Post raus und pingt diese zwecks Richtigkeit an. Fehlerhafte und somit nicht erreichbare Links stellt das Plugin als übersichtliche, klickbare Liste dar. Zusätzlich zum jeweiligen Link führt das Tool den Grund der gescheiterten Verbindung auf. Im Erfolgsfall keine Hinweisausgabe.
+Beim Speichern bzw. Publizieren eines Beitrags pickt sich die Erweiterung alle URLs rasch heraus und pingt sie zwecks Richtigkeit/Erreichbarkeit an. Fehlerhafte Links samt Ursache listet das Plugin als übersichtliche Liste zur Kontrolle auf.
 
-Auf der Google+ Seite des Plugins [Save Post. Check Links.](https://plus.google.com/110569673423509816572/posts/hDtKSyEozeR "Save Post. Check Links.") sind zahlreiche Tipps und Hinweise zur Nutzung der Erweiterung zu finden.
-
-= Vorteile =
-* Performante Lösung, übersichtlicher Code
+= Stärken =
+* Link-Check im Hintergrund
+* Anzeige der Fehlerursache
 * Keine Konfiguration notwendig
-* Linkcheck im Hintergrund
-* Anzeige des Fehlercodes
-* Intakte Links = SEO
+* Intakte Links = SEO-Optimierung
+* Performante Lösung, übersichtlicher Code
 
-= Weiterführende Links =
+= Dokumentation =
+* [Save Post. Check Links.](https://plus.google.com/110569673423509816572/posts/hDtKSyEozeR "Save Post. Check Links.")
+
+= Autor =
 * [Google+](https://plus.google.com/110569673423509816572 "Google+")
 * [Portfolio](http://ebiene.de "Portfolio")
 
 
 
 == Changelog ==
+
+= 0.5 =
+* Xmas Edition
 
 = 0.4.1 =
 * Hotfix für URLs mit Hash-Fragmenten
@@ -55,11 +61,3 @@ Auf der Google+ Seite des Plugins [Save Post. Check Links.](https://plus.google.
 == Screenshots ==
 
 1. Ausgabe mit fehlerhaften Links
-
-
-
-== Installation ==
-
-1. Installieren.
-1. Aktivieren.
-1. Nutzen.

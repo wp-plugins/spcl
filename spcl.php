@@ -5,7 +5,7 @@ Description: Bei der Speicherung eines Artikels prüft das Plugin die im Text vo
 Author: Sergej M&uuml;ller
 Author URI: http://wpseo.de
 Plugin URI: https://plus.google.com/110569673423509816572/posts/hDtKSyEozeR
-Version: 0.4.1
+Version: 0.5
 */
 
 
