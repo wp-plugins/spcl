@@ -5,15 +5,13 @@ Description: Bei der Speicherung eines Artikels prüft das Plugin die im Text vo
 Author: Sergej M&uuml;ller
 Author URI: http://wpseo.de
 Plugin URI: https://plus.google.com/110569673423509816572/posts/hDtKSyEozeR
-Version: 0.5
+Version: 0.5.1
 */
 
 
 /* Sicherheitsabfrage */
 if ( !class_exists('WP') ) {
-	header('Status: 403 Forbidden');
-	header('HTTP/1.1 403 Forbidden');
-	exit();
+	die();
 }
 
 
@@ -85,7 +83,7 @@ final class SPCL {
 	* Prüfung der Links
 	*
 	* @since   0.1
-	* @change  0.4.1
+	* @change  0.5.1
 	*
 	* @param   intval  $id  ID des Beitrags
 	*/
@@ -128,7 +126,7 @@ final class SPCL {
 			}
 			
 			/* Säubern */
-			$url = esc_url($url);
+			$url = esc_url_raw($url);
 			
 			/* Pingen */
 			$response = wp_remote_head($url);

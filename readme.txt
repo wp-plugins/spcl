@@ -3,7 +3,7 @@ Contributors: sergej.mueller
 Tags: check, links, broken, seo
 Donate link: http://flattr.com/profile/sergej.mueller
 Requires at least: 2.8
-Tested up to: 3.3
+Tested up to: 3.4
 Stable tag: trunk
 
 
@@ -35,6 +35,8 @@ Beim Speichern bzw. Publizieren eines Beitrags pickt sich die Erweiterung alle U
 
 
 == Changelog ==
+= 0.5.1 =
+* Tausch `esc_url` gegen `esc_url_raw`
 
 = 0.5 =
 * Xmas Edition
