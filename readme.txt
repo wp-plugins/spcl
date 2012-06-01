@@ -1,7 +1,7 @@
 === Save Post. Check Links. ===
 Contributors: sergej.mueller
 Tags: check, links, broken, seo
-Donate link: http://flattr.com/profile/sergej.mueller
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5RDDW9FEHGLG6
 Requires at least: 2.8
 Tested up to: 3.4
 Stable tag: trunk
@@ -25,11 +25,16 @@ Beim Speichern bzw. Publizieren eines Beitrags pickt sich die Erweiterung alle U
 * Intakte Links = SEO-Optimierung
 * Performante Lösung, übersichtlicher Code
 
+= Systemanforderungen =
+* PHP ab 5
+* WordPress ab 2.8
+
 = Dokumentation =
 * [Save Post. Check Links.](https://plus.google.com/110569673423509816572/posts/hDtKSyEozeR "Save Post. Check Links.")
 
 = Autor =
 * [Google+](https://plus.google.com/110569673423509816572 "Google+")
+* [Plugins](http://wpcoder.de "Plugins")
 * [Portfolio](http://ebiene.de "Portfolio")
 
 
