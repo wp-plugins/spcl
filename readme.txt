@@ -77,3 +77,9 @@ Beim Speichern bzw. Publizieren der Artikel sucht sich die WordPress-Erweiterung
 
 = 0.1 =
 * Plugin-Veröffentlichung
+
+
+
+== Screenshots ==
+
+1. Ausgabe fehlerhafter Links
