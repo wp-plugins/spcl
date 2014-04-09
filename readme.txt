@@ -2,9 +2,11 @@
 Contributors: sergej.mueller
 Tags: check, links, broken, seo
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5RDDW9FEHGLG6
-Requires at least: 2.8
-Tested up to: 3.4
+Requires at least: 3.7
+Tested up to: 3.9
 Stable tag: trunk
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 
@@ -14,32 +16,45 @@ Prüfung der Links auf ihre Richtigkeit bzw. Erreichbarkeit. Automatisiert und a
 
 == Description ==
 
-*Save Post. Check Links.* übernimmt die Prüfung der - internen wie externen - Verlinkungen innerhalb eines WordPress-Artikels. Somit hilft das Plugin die lästigen Tipp- sowie Copy&Paste-Fehler in den gesetzten Links zu erkennen. Der Vorteil: Defekte Webseiten-Verknüpfungen werden noch vor der Veröffentlichung des Beitrages erkannt und vom Autor rechtzeitig korrigiert.
+*Save Post. Check Links.* übernimmt die Prüfung interner und externer Verlinkungen innerhalb der WordPress-Artikel. Das Plugin erkennt somit Tipp- sowie Copy&Paste-Fehler in gesetzten Links. Der Vorteil: Defekte Webseiten-Verknüpfungen werden noch vor der Veröffentlichung der Beiträge erkannt und vom Autor korrigiert.
 
-Beim Speichern bzw. Publizieren eines Beitrags pickt sich die Erweiterung alle URLs rasch heraus und pingt sie zwecks Richtigkeit/Erreichbarkeit an. Fehlerhafte Links samt Ursache listet das Plugin als übersichtliche Liste zur Kontrolle auf.
+Beim Speichern bzw. Publizieren der Artikel sucht sich die WordPress-Erweiterung alle URLs aus dem Inhalt heraus und pingt sie zwecks Richtigkeit/Erreichbarkeit an. Fehlerhafte Links samt Ursache (Fehlercode) listet das Plugin zur Kontrolle bzw. zum Nachbessern auf.
+
 
 = Stärken =
-* Link-Check im Hintergrund
+* Links-Check im Hintergrund
 * Anzeige der Fehlerursache
 * Keine Konfiguration notwendig
 * Intakte Links = SEO-Optimierung
 * Performante Lösung, übersichtlicher Code
 
-= Systemanforderungen =
+= Systemvoraussetzungen =
 * PHP ab 5
-* WordPress ab 2.8
+* WordPress ab 3.7
+
+
+= Unterstützung =
+* Per [Flattr](https://flattr.com/t/1628977)
+* Per [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5RDDW9FEHGLG6)
+
 
 = Dokumentation =
 * [Save Post. Check Links.](https://plus.google.com/110569673423509816572/posts/hDtKSyEozeR "Save Post. Check Links.")
 
+
 = Autor =
-* [Google+](https://plus.google.com/110569673423509816572 "Google+")
-* [Plugins](http://wpcoder.de "Plugins")
-* [Portfolio](http://ebiene.de "Portfolio")
+* [Twitter](https://twitter.com/wpSEO)
+* [Google+](https://plus.google.com/110569673423509816572)
+* [Plugins](http://wpcoder.de)
 
 
 
 == Changelog ==
+
+= 0.6.0 =
+* Support zu WordPress 3.9
+* Überarbeitung des Sourcecodes
+
 = 0.5.1 =
 * Tausch `esc_url` gegen `esc_url_raw`
 
@@ -62,9 +77,3 @@ Beim Speichern bzw. Publizieren eines Beitrags pickt sich die Erweiterung alle U
 
 = 0.1 =
 * Plugin-Veröffentlichung
-
-
-
-== Screenshots ==
-
-1. Ausgabe mit fehlerhaften Links

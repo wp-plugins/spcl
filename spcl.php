@@ -1,18 +1,16 @@
 <?php
 /*
 Plugin Name: Save Post. Check Links.
-Description: Bei der Speicherung eines Artikels prüft das Plugin die im Text vorhandenen Verlinkungen auf ihre Erreichbarkeit bzw. Gültigkeit.
+Description: Bei der Speicherung der Artikel prüft das Plugin die im Text vorhandenen Verlinkungen auf ihre Erreichbarkeit bzw. Gültigkeit.
 Author: Sergej M&uuml;ller
-Author URI: http://wpseo.de
+Author URI: http://wpcoder.de
 Plugin URI: https://plus.google.com/110569673423509816572/posts/hDtKSyEozeR
-Version: 0.5.1
+Version: 0.6.0
 */
 
 
-/* Sicherheitsabfrage */
-if ( !class_exists('WP') ) {
-	die();
-}
+/* Quit */
+defined('ABSPATH') OR exit;
 
 
 /**
@@ -20,150 +18,116 @@ if ( !class_exists('WP') ) {
 */
 
 final class SPCL {
-	
+
 
 	/**
 	* Initiator der Klasse
 	*
 	* @since   0.1
-	* @change  0.3
+	* @change  0.6.0
 	*/
 
   	public static function init()
   	{
-		/* Filter */
-		if ( (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) or (defined('DOING_CRON') && DOING_CRON) or (defined('DOING_AJAX') && DOING_AJAX) or (defined('XMLRPC_REQUEST') && XMLRPC_REQUEST) ) {
+		/* Come out */
+		if ( (! is_admin()) OR (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) OR (defined('DOING_CRON') && DOING_CRON) OR (defined('DOING_AJAX') && DOING_AJAX) OR (defined('XMLRPC_REQUEST') && XMLRPC_REQUEST) ) {
 			return;
 		}
-		
+
 		/* Actions */
 		add_action(
 			'save_post',
 			array(
 				__CLASS__,
-				'check_post_links'
-			)	
-		);
-		add_action(
-			'admin_head-post.php',
-			array(
-				__CLASS__,
-				'handle_admin_notices'
+				'validate_links_for_post'
 			)
 		);
-	}
-	
-	
-	/**
-	* Proxy für die Adminnotiz
-	*
-	* @since   0.2
-	* @change  0.2
-	*
-	*/
-	
-	public static function handle_admin_notices() {
-		/* Leer? */
-		if ( empty($_GET['message']) ) {
-			return;
-		}
-		
-		/* Ausführen */
 		add_action(
 			'admin_notices',
 			array(
 				__CLASS__,
-				'show_admin_notices'
-			)
+				'display_validation_errors'
+			),
+			99
 		);
 	}
-	
+
 
   	/**
-	* Prüfung der Links
+	* Validate post links
 	*
-	* @since   0.1
+	* @since   0.1.0
 	* @change  0.5.1
 	*
-	* @param   intval  $id  ID des Beitrags
+	* @param   intval  $id  Post ID
 	*/
 
-	public static function check_post_links($id)
+	public static function validate_links_for_post($id)
 	{
-		/* Keine ID? */
+		/* No PostID? */
 		if ( empty($id) ) {
 			return;
 		}
-		
-		/* Post */
+
+		/* Get post data */
 		$post = get_post($id);
-		
-		/* Leer? */
-		if ( empty($post) or empty($post->post_content) ) {
+
+		/* Post incomplete? */
+		if ( empty($post) OR empty($post->post_content) ) {
 			return;
 		}
-		
-		/* Links suchen */
-		preg_match_all(
-			'/<a [^>]*href=["\'](http(?:.+?))["\']/i',
-			$post->post_content,
-			$out
-		);
-		
-		/* Leer? */
-		if ( empty($out[1]) ) {
+
+		/* Extract urls */
+		if ( ! $urls = wp_extract_urls($post->post_content) ) {
 			return;
 		}
-		
+
 		/* Init */
 		$found = array();
-		
-		/* Loopen */
-		foreach ( $out[1] as $url ) {
+
+		/* Loop the urls */
+		foreach ( $urls as $url ) {
 			/* Fragment */
 			if ( $hash = parse_url($url, PHP_URL_FRAGMENT) ) {
 				$url = str_replace('#' .$hash, '', $url);
 			}
-			
-			/* Säubern */
-			$url = esc_url_raw($url);
-			
-			/* Pingen */
-			$response = wp_remote_head($url);
-			
-			/* Fehler? */
+
+			/* Ping */
+			$response = wp_safe_remote_head($url);
+
+			/* Error? */
 			if ( is_wp_error($response) ) {
 				$found[] = array(
 					'url'	=> $url,
-					'error' => esc_html($response->get_error_message())
+					'error' => $response->get_error_message()
 				);
-			
-			/* Status Code */
+
+			/* Respronse code */
 			} else {
-				/* Code */
+				/* Status code */
 				$code = (int)wp_remote_retrieve_response_code($response);
-				
-				/* Abfragen */
-				if ( $code >= 400 && $code != 405 ) { 
+
+				/* Handle error codes */
+				if ( $code >= 400 && $code != 405 ) {
 					$found[] = array(
 						'url'	=> $url,
 						'error' => sprintf(
-							'Status Code <a href="http://de.wikipedia.org/wiki/HTTP-Statuscode" target="_blank">%s</a>',
+							'Status Code %d',
 							$code
 						)
 					);
 				}
 			}
 		}
-		
-		/* Leer? */
+
+		/* No items? */
 		if ( empty($found) ) {
 			return;
 		}
-		
-		/* Speichern */
+
+		/* Cache the result */
 		set_transient(
-			self::get_transient_hash(),
+			self::_transient_hash(),
 			$found,
 			60*30
 		);
@@ -171,54 +135,59 @@ final class SPCL {
 
 
   	/**
-	* Anzeige des Resultats
+	* Output of validation errors
 	*
-	* @since   0.1
-	* @change  0.3
+	* @since   0.1.0
+	* @change  0.6.0
 	*
 	*/
 
-	public static function show_admin_notices()
+	public static function display_validation_errors()
 	{
-		/* Init */
-		$hash = self::get_transient_hash();
-		
-		/* Auslesen */
-		if ( (!$items = get_transient($hash)) or !is_array($items) ) {
+		/* Check for accessibility */
+		if ( empty($GLOBALS['pagenow']) OR empty($_GET['message']) OR $GLOBALS['pagenow'] !== 'post.php' ) {
 			return;
 		}
 
-		/* Löschen */
+		/* Cache hash */
+		$hash = self::_transient_hash();
+
+		/* Get errors from cache */
+		if ( (! $items = get_transient($hash)) OR (! is_array($items)) ) {
+			return;
+		}
+
+		/* Kill current cache */
 		delete_transient($hash);
-		
-		/* Ausgabe starten */
-		echo '<div id="message" class="updated"><p><strong>Nicht erreichbare Links</strong></p><ul>';
-		
-		/* Loop */
+
+		/* Output start */
+		echo '<div class="error"><ul>';
+
+		/* Loop the cache items */
 		foreach ( $items as $item ) {
 			echo sprintf(
 				'<li><a href="%1$s" target="_blank">%1$s</a> (%2$s)</li>',
-				$item['url'],
-				$item['error']
-				
+				esc_url($item['url']),
+				esc_html($item['error'])
+
 			);
 		}
-		
-		/* Ausgabe beenden */
+
+		/* Output end */
 		echo '</ul></div>';
 	}
-	
-	
+
+
 	/**
-	* Generierung eines Hash-Wertes
+	* Create transient hash based on post and user IDs
 	*
-	* @since   0.1
-	* @change  0.3
+	* @since   0.1.0
+	* @change  0.6.0
 	*
-	* @return  string  Hash-Wert
+	* @return  string  Transient hash
 	*/
-	
-	private static function get_transient_hash() {
+
+	private static function _transient_hash() {
 		return md5(
 			sprintf(
 				'SPCL_%s_%s',
