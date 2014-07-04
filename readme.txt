@@ -39,7 +39,7 @@ Beim Speichern bzw. Publizieren der Artikel sucht sich die WordPress-Erweiterung
 
 
 = Unterstützung =
-* Per [Flattr](https://flattr.com/submit/auto?user_id=sergej.mueller&url=http%3A%2F%2Fwordpress.org%2Fplugins%2Fspcl%2F)
+* Per [Flattr](https://flattr.com/submit/auto?user_id=sergej.mueller&url=https%3A%2F%2Fwordpress.org%2Fplugins%2Fspcl%2F)
 * Per [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5RDDW9FEHGLG6)
 
 
