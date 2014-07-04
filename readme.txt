@@ -56,6 +56,9 @@ Beim Speichern bzw. Publizieren der Artikel sucht sich die WordPress-Erweiterung
 
 == Changelog ==
 
+= 0.6.2 =
+* Zusatzprüfung für extrahierte Links
+
 = 0.6.1 =
 * Werte zu Plugin-Speichernutzung hinzugefügt
 * `get_current_user_id` statt `wp_get_current_user()->ID`

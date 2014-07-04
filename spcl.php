@@ -6,7 +6,7 @@ Author: Sergej M&uuml;ller
 Author URI: http://wpcoder.de
 Plugin URI: https://plus.google.com/110569673423509816572/posts/hDtKSyEozeR
 License: GPLv2 or later
-Version: 0.6.1
+Version: 0.6.2
 */
 
 /*
@@ -76,7 +76,7 @@ final class SPCL {
 	* Validate post links
 	*
 	* @since   0.1.0
-	* @change  0.5.1
+	* @change  0.6.2
 	*
 	* @param   intval  $id  Post ID
 	*/
@@ -109,6 +109,20 @@ final class SPCL {
 			/* Fragment */
 			if ( $hash = parse_url($url, PHP_URL_FRAGMENT) ) {
 				$url = str_replace('#' .$hash, '', $url);
+			}
+
+			/* URL sanitization */
+			$url = esc_url_raw(
+				$url,
+				array(
+					'http',
+					'https'
+				)
+			);
+
+			/* Skip URL */
+			if ( empty($url) ) {
+				continue;
 			}
 
 			/* Ping */
