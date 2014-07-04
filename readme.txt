@@ -33,13 +33,18 @@ Beim Speichern bzw. Publizieren der Artikel sucht sich die WordPress-Erweiterung
 * WordPress ab 3.7
 
 
+= Speicherbelegung =
+* Im Backend: ~ 0,04 MB
+* Im Frontend: ~ 0,03 MB
+
+
 = Unterstützung =
-* Per [Flattr](https://flattr.com/t/1628977)
+* Per [Flattr](https://flattr.com/submit/auto?user_id=sergej.mueller&url=http%3A%2F%2Fwordpress.org%2Fplugins%2Fspcl%2F)
 * Per [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5RDDW9FEHGLG6)
 
 
 = Dokumentation =
-* [Save Post. Check Links.](https://plus.google.com/110569673423509816572/posts/hDtKSyEozeR "Save Post. Check Links.")
+* [Save Post. Check Links.](https://plus.google.com/110569673423509816572/posts/hDtKSyEozeR)
 
 
 = Autor =
@@ -50,6 +55,10 @@ Beim Speichern bzw. Publizieren der Artikel sucht sich die WordPress-Erweiterung
 
 
 == Changelog ==
+
+= 0.6.1 =
+* Werte zu Plugin-Speichernutzung hinzugefügt
+* `get_current_user_id` statt `wp_get_current_user()->ID`
 
 = 0.6.0 =
 * Support zu WordPress 3.9

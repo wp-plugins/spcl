@@ -6,7 +6,7 @@ Author: Sergej M&uuml;ller
 Author URI: http://wpcoder.de
 Plugin URI: https://plus.google.com/110569673423509816572/posts/hDtKSyEozeR
 License: GPLv2 or later
-Version: 0.6.0
+Version: 0.6.1
 */
 
 /*
@@ -201,7 +201,7 @@ final class SPCL {
 	* Create transient hash based on post and user IDs
 	*
 	* @since   0.1.0
-	* @change  0.6.0
+	* @change  0.6.1
 	*
 	* @return  string  Transient hash
 	*/
@@ -211,7 +211,7 @@ final class SPCL {
 			sprintf(
 				'SPCL_%s_%s',
 				get_the_ID(),
-				wp_get_current_user()->ID
+				get_current_user_id()
 			)
 		);
 	}
