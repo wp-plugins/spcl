@@ -1,6 +1,6 @@
 === Save Post. Check Links. ===
 Contributors: sergej.mueller
-Tags: check, links, broken, seo
+Tags: check, links, broken, seo, link checker
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5RDDW9FEHGLG6
 Requires at least: 3.7
 Tested up to: 3.9.1
