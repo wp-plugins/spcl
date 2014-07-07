@@ -3,20 +3,20 @@ Contributors: sergej.mueller
 Tags: check, links, broken, seo
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5RDDW9FEHGLG6
 Requires at least: 3.7
-Tested up to: 3.9
+Tested up to: 3.9.1
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 
-Prüfung der Links auf ihre Richtigkeit bzw. Erreichbarkeit. Automatisiert und autonom beim Speichern der Beiträge.
+Erreichbarkeitsprüfung der Links beim Speichern von Artikeln im WordPress-Administrationsbereich.
 
 
 
 == Description ==
 
-*Save Post. Check Links.* übernimmt die Prüfung interner und externer Verlinkungen innerhalb der WordPress-Artikel. Das Plugin erkennt somit Tipp- sowie Copy&Paste-Fehler in gesetzten Links. Der Vorteil: Defekte Webseiten-Verknüpfungen werden noch vor der Veröffentlichung der Beiträge erkannt und vom Autor korrigiert.
+*Save Post. Check Links.* übernimmt die Prüfung interner und externer Verlinkungen innerhalb der WordPress-Artikel. Das Plugin erkennt somit Tipp- sowie Copy&Paste-Fehler in gesetzten Links. Der Vorteil: Defekte Website-Verknüpfungen werden noch vor der Veröffentlichung der Beiträge erkannt und vom Autor korrigiert.
 
 Beim Speichern bzw. Publizieren der Artikel sucht sich die WordPress-Erweiterung alle URLs aus dem Inhalt heraus und pingt sie zwecks Richtigkeit/Erreichbarkeit an. Fehlerhafte Links samt Ursache (Fehlercode) listet das Plugin zur Kontrolle bzw. zum Nachbessern auf.
 
@@ -35,16 +35,12 @@ Beim Speichern bzw. Publizieren der Artikel sucht sich die WordPress-Erweiterung
 
 = Speicherbelegung =
 * Im Backend: ~ 0,04 MB
-* Im Frontend: ~ 0,03 MB
+* Im Frontend: ~ 0,01 MB
 
 
 = Unterstützung =
 * Per [Flattr](https://flattr.com/submit/auto?user_id=sergej.mueller&url=https%3A%2F%2Fwordpress.org%2Fplugins%2Fspcl%2F)
 * Per [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5RDDW9FEHGLG6)
-
-
-= Dokumentation =
-* [Save Post. Check Links.](https://plus.google.com/110569673423509816572/posts/hDtKSyEozeR)
 
 
 = Autor =
@@ -55,6 +51,9 @@ Beim Speichern bzw. Publizieren der Artikel sucht sich die WordPress-Erweiterung
 
 
 == Changelog ==
+
+= 0.7.0 =
+* Umstrukturierung zwecks Reduzierung des Speicherverbrauchs
 
 = 0.6.2 =
 * Zusatzprüfung für extrahierte Links
