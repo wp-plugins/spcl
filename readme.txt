@@ -3,7 +3,7 @@ Contributors: sergej.mueller
 Tags: check, links, broken, seo, link checker
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5RDDW9FEHGLG6
 Requires at least: 3.7
-Tested up to: 3.9.1
+Tested up to: 4.0
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -39,7 +39,7 @@ Beim Speichern bzw. Publizieren der Artikel sucht sich die WordPress-Erweiterung
 
 
 = Unterstützung =
-* Per [Flattr](https://flattr.com/submit/auto?user_id=sergej.mueller&url=https%3A%2F%2Fwordpress.org%2Fplugins%2Fspcl%2F)
+* Per [Flattr](https://flattr.com/thing/d3678820253d89a088d7b415a739cd57)
 * Per [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5RDDW9FEHGLG6)
 
 
