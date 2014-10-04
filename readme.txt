@@ -1,7 +1,7 @@
 === Save Post. Check Links. ===
 Contributors: sergej.mueller
 Tags: check, links, broken, seo, link checker
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5RDDW9FEHGLG6
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZAQUT9RLPW8QN
 Requires at least: 3.7
 Tested up to: 4.0
 Stable tag: trunk
@@ -40,7 +40,7 @@ Beim Speichern bzw. Publizieren der Artikel sucht sich die WordPress-Erweiterung
 
 = Unterstützung =
 * Per [Flattr](https://flattr.com/thing/d3678820253d89a088d7b415a739cd57)
-* Per [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5RDDW9FEHGLG6)
+* Per [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZAQUT9RLPW8QN)
 
 
 = Autor =
