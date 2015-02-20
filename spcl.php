@@ -6,11 +6,11 @@ Author: Sergej M&uuml;ller
 Author URI: http://wpcoder.de
 Plugin URI: https://wordpress.org/plugins/spcl/
 License: GPLv2 or later
-Version: 0.7.0
+Version: 0.7.1
 */
 
 /*
-Copyright (C)  2011-2015 Sergej Müller
+Copyright (C)  2011-2014 Sergej Müller
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

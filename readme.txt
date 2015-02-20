@@ -16,7 +16,7 @@ Erreichbarkeitsprüfung der Links beim Speichern von Artikeln im WordPress-Admin
 
 == Description ==
 
-*Save Post. Check Links.* übernimmt die Prüfung interner und externer Verlinkungen innerhalb der WordPress-Artikel. Das Plugin erkennt somit Tipp- sowie Copy&Paste-Fehler in gesetzten Links. Der Vorteil: Defekte Website-Verknüpfungen werden noch vor der Veröffentlichung der Beiträge erkannt und vom Autor korrigiert.
+*Save Post. Check Links.* übernimmt die Prüfung interner und externer Verlinkungen innerhalb der WordPress-Artikel. Das Plugin erkennt somit Tipp- sowie Copy&Paste-Fehler in gesetzten Links und Bildpfaden. Der Vorteil: Defekte Website-Verknüpfungen und Bild-Referenzierungen werden noch vor der Veröffentlichung der Beiträge erkannt und vom Autor korrigiert.
 
 Beim Speichern bzw. Publizieren der Artikel sucht sich die WordPress-Erweiterung alle URLs aus dem Inhalt heraus und pingt sie zwecks Richtigkeit/Erreichbarkeit an. Fehlerhafte Links samt Ursache (Fehlercode) listet das Plugin zur Kontrolle bzw. zum Nachbessern auf.
 
@@ -27,6 +27,11 @@ Beim Speichern bzw. Publizieren der Artikel sucht sich die WordPress-Erweiterung
 * Keine Konfiguration notwendig
 * Intakte Links = SEO-Optimierung
 * Performante Lösung, übersichtlicher Code
+
+
+= Hooks =
+* [spcl_acceptable_protocols](https://gist.github.com/sergejmueller/b515138b23b39ebfd1e5)
+
 
 = Systemvoraussetzungen =
 * PHP ab 5
@@ -51,6 +56,10 @@ Beim Speichern bzw. Publizieren der Artikel sucht sich die WordPress-Erweiterung
 
 
 == Changelog ==
+
+= 0.7.1 =
+* Keine Überprüfung relativer Links (z.B. bei Bildpfaden)
+* Hook [spcl_acceptable_protocols](https://gist.github.com/sergejmueller/b515138b23b39ebfd1e5) hinzugefügt
 
 = 0.7.0 =
 * Umstrukturierung zwecks Reduzierung des Speicherverbrauchs

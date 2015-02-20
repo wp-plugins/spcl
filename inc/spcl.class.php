@@ -74,7 +74,9 @@ final class SPCL {
     * Validate post links
     *
     * @since   0.1.0
-    * @change  0.7.0
+    * @change  0.7.1
+    *
+    * @hook    array  spcl_acceptable_protocols
     *
     * @param   intval  $id  Post ID
     */
@@ -104,7 +106,21 @@ final class SPCL {
 
         /* Loop the urls */
         foreach ( $urls as $url ) {
-            /* Fragment */
+            /* Acceptable protocols filter */
+            $acceptable_protocols = (array)apply_filters(
+                'spcl_acceptable_protocols',
+                array(
+                    'http',
+                    'https'
+                )
+            );
+
+            /* Scheme check */
+            if ( ! in_array( parse_url($url, PHP_URL_SCHEME), $acceptable_protocols ) ) {
+                continue;
+            }
+
+            /* Fragment check */
             if ( $hash = parse_url($url, PHP_URL_FRAGMENT) ) {
                 $url = str_replace('#' .$hash, '', $url);
             }
@@ -112,10 +128,7 @@ final class SPCL {
             /* URL sanitization */
             $url = esc_url_raw(
                 $url,
-                array(
-                    'http',
-                    'https'
-                )
+                $acceptable_protocols
             );
 
             /* Skip URL */
