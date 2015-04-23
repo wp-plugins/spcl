@@ -205,12 +205,12 @@ final class SPCL {
         delete_transient($hash);
 
         /* Output start */
-        echo '<div class="error"><ul>';
+        echo '<div class="notice notice-error is-dismissible">';
 
         /* Loop the cache items */
         foreach ( $items as $item ) {
             echo sprintf(
-                '<li><a href="%1$s" target="_blank">%1$s</a> (%2$s)</li>',
+                '<p><a href="%1$s" target="_blank">%1$s</a> (%2$s)</p>',
                 esc_url($item['url']),
                 esc_html($item['error'])
 
@@ -218,7 +218,7 @@ final class SPCL {
         }
 
         /* Output end */
-        echo '</ul></div>';
+        echo '</div>';
     }
 
 
